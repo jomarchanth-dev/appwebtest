@@ -1,6 +1,6 @@
 {
   "name": "webapp-local",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "description": "Webapp local de practica: login, catalogo, carrito y mantenedor de productos",
   "main": "server.js",
