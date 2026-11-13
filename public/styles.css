@@ -1,0 +1,165 @@
+:root {
+  --fondo: #f4f6f8;
+  --tarjeta: #ffffff;
+  --texto: #1f2933;
+  --primario: #2563eb;
+  --error: #b91c1c;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fondo: #111827;
+    --tarjeta: #1f2937;
+    --texto: #f9fafb;
+    --primario: #60a5fa;
+    --error: #fca5a5;
+  }
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: var(--fondo);
+  color: var(--texto);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.tarjeta {
+  background: var(--tarjeta);
+  padding: 2rem;
+  border-radius: 12px;
+  width: min(360px, 90vw);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.6rem;
+  margin-top: 0.3rem;
+  border: 1px solid #cbd2d9;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+button {
+  margin-top: 1.5rem;
+  width: 100%;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--primario);
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.error {
+  color: var(--error);
+  margin: 1rem 0 0;
+}
+
+.nota {
+  opacity: 0.7;
+  font-size: 0.9rem;
+}
+
+/* Catálogo */
+body.pagina-ancha {
+  display: block;
+  place-items: initial;
+}
+
+.barra {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: var(--tarjeta);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.barra nav a {
+  margin-left: 1rem;
+  color: var(--primario);
+}
+
+main {
+  padding: 1.5rem 2rem;
+}
+
+.grilla {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.producto {
+  background: var(--tarjeta);
+  border-radius: 12px;
+  padding: 1.2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.producto h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+}
+
+.producto p {
+  margin: 0.3rem 0;
+}
+
+.precio {
+  font-weight: 700;
+  color: var(--primario);
+}
+
+.tarjeta-ancha {
+  background: var(--tarjeta);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  max-width: 720px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.tarjeta-ancha h2 {
+  margin-top: 0;
+  font-size: 1.2rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 0.5rem;
+  border-bottom: 1px solid #d9dee5;
+}
+
+@media (max-width: 600px) {
+  .barra,
+  main {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}

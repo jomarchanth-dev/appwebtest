@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mantenedor - Tienda práctica</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="pagina-ancha">
+  <header class="barra">
+    <strong>Mantenedor de productos</strong>
+    <nav>
+      <a href="/catalogo">Catálogo</a>
+      <a href="/inicio">Inicio</a>
+    </nav>
+  </header>
+  <main>
+    <section class="tarjeta-ancha">
+      <h2>Nuevo producto</h2>
+      <form id="form-producto" novalidate>
+        <label for="nombre">Nombre</label>
+        <input id="nombre" name="nombre" type="text" required>
+
+        <label for="descripcion">Descripción</label>
+        <input id="descripcion" name="descripcion" type="text">
+
+        <label for="precio">Precio (CLP)</label>
+        <input id="precio" name="precio" type="number" min="1" step="1" required>
+
+        <label for="stock">Stock</label>
+        <input id="stock" name="stock" type="number" min="0" step="1" required>
+
+        <p id="mensaje" class="error" role="alert" hidden></p>
+        <button type="submit">Crear producto</button>
+      </form>
+    </section>
+
+    <section class="tarjeta-ancha">
+      <h2>Productos existentes</h2>
+      <table id="tabla-productos">
+        <thead>
+          <tr><th>ID</th><th>Nombre</th><th>Precio</th><th>Stock</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
+  <script src="/admin.js"></script>
+</body>
+</html>
