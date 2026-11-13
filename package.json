@@ -5,7 +5,8 @@
   "description": "Webapp local de practica: login, catalogo, carrito y mantenedor de productos",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "playwright test"
   },
   "engines": {
     "node": ">=20"
@@ -14,5 +15,8 @@
     "bcryptjs": "^2.4.3",
     "express": "^4.21.2",
     "express-session": "^1.18.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.1"
   }
 }
