@@ -8,7 +8,12 @@ export default defineConfig({
   testDir: './tests',
   timeout: 30_000,
   retries: 0,
-  reporter: [['list'], ['junit', { outputFile: 'test-results/junit.xml' }]],
+  reporter: [
+    ['list'],
+    ['junit', { outputFile: 'test-results/junit.xml' }],
+    // Reporte visual. open: 'never' evita que se abra solo en Jenkins o en local.
+    ['html', { outputFolder: 'playwright-report', open: 'never' }],
+  ],
   use: {
     baseURL: WEBAPP_URL,
     headless: process.env.HEADLESS !== 'false',
