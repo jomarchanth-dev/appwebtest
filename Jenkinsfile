@@ -16,7 +16,7 @@ pipeline {
     }
 
     triggers {
-        // Consulta GitHub cada 5 minutos y ejecuta solo si hay commits nuevos.
+        // Consulta GitHub cada 5 minutos y ejecuta solo si hay commits nuevos. ///////
         pollSCM('H/5 * * * *')
         // Ejecución programada de respaldo, de lunes a viernes.
         // Comentario de prueba: confirma que el cambio dispara pollSCM.
