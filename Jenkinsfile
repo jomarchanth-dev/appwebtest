@@ -7,12 +7,20 @@ pipeline {
         buildDiscarder(logRotator(numToKeepStr: '20'))
     }
 
+    parameters {
+        booleanParam(
+            name: 'VISIBLE',
+            defaultValue: false,
+            description: 'Si está marcado, Chromium se abre con ventana visible en el escritorio del equipo'
+        )
+    }
+
     triggers {
         cron('H 2 * * 1-5')
     }
 
     environment {
-        HEADLESS = 'true'
+        HEADLESS = "${params.VISIBLE ? 'false' : 'true'}"
         WEBAPP_URL = 'http://localhost:3000'
     }
 
