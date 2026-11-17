@@ -23,7 +23,8 @@ test.describe('Login', () => {
   test('muestra mensaje genérico con contraseña incorrecta', async ({ page }) => {
     await iniciarSesion(page, ADMIN.usuario, 'clave-incorrecta');
 
-    await expect(page.getByRole('alert')).toHaveText('Usuario o contraseña incorrectos');
+    // PRUEBA ROTA A PROPÓSITO (2.2): el texto esperado no coincide con la app.
+    await expect(page.getByRole('alert')).toHaveText('Contraseña incorrecta');
     await expect(page).toHaveURL(/\/login$/);
   });
 
